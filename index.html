@@ -342,13 +342,23 @@
         </div>
         <div class="section" id="resume">
           <h1>My Resume</h1>
-          <div class="resume-frame">
-            <embed
-              class="resume-embed"
-              src="JohnnyXiaoResumeSDE2026General.pdf"
-              type="application/pdf"
-            />
-          </div>
+           <div class="resume-frame" id="resumeFrame" style="cursor:pointer;">
+             <iframe class="resume-embed" src="JohnnyXiaoResumeSDE2026General.pdf#view=FitH" frameborder="0"></iframe>
+           </div>
+           <script>
+             document.getElementById('resumeFrame').addEventListener('click', function() {
+               const iframe = this.querySelector('.resume-embed');
+               if (iframe.requestFullscreen) {
+                 iframe.requestFullscreen();
+               } else if (iframe.webkitRequestFullscreen) {
+                 iframe.webkitRequestFullscreen();
+               } else if (iframe.mozRequestFullScreen) {
+                 iframe.mozRequestFullScreen();
+               } else if (iframe.msRequestFullscreen) {
+                 iframe.msRequestFullscreen();
+               }
+             });
+           </script>
         </div>
       </div>
     </div>
