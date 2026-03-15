@@ -93,11 +93,17 @@
         background: #fff;
       }
 
-      /* Home section */
+      /* Sections: hide by default, show when active */
       .section {
+        display: none;
         width: 100%;
       }
 
+      .section.active {
+        display: block;
+      }
+
+      /* Home section */
       .home-box {
         background: #111;
         color: #fff;
@@ -136,26 +142,6 @@
         color: #2575fc;
         font-weight: 700;
         text-decoration: none;
-      }
-
-      @media (max-width: 900px) {
-        .layout {
-          flex-direction: column;
-        }
-        .sidebar {
-          position: relative;
-          width: 100%;
-          height: auto;
-          box-shadow: none;
-          padding: 12px 0;
-        }
-        .main {
-          margin-left: 0;
-          padding: 16px;
-        }
-        .tabs {
-          flex-direction: row;
-        }
       }
     </style>
   </head>
