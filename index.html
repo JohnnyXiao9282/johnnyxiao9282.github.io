@@ -9,203 +9,152 @@
       rel="stylesheet"
     />
     <style>
+      /* Base */
       body {
         font-family: "Roboto", sans-serif;
         background: #fff;
         margin: 0;
         padding: 0;
-        .tab {
-          background: #00ff6a !important;
-          color: #111 !important;
-          border: none;
-          border-radius: 8px;
-          padding: 0.8rem 1.5rem;
-          font-size: 1.1rem;
-          font-weight: 600;
-          cursor: pointer;
-          margin-bottom: 0.5rem;
-          box-shadow: 0 2px 8px rgba(0, 255, 106, 0.07);
-          transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-          .tab {
-            background: #00ff6a;
-          .sidebar {
-            background: #111;
-            color: #fff;
-            width: 220px;
-            min-width: 220px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 0 2rem 0;
-            box-shadow: 2px 0 8px rgba(0,255,106,0.12);
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            z-index: 10;
-          }
-            box-shadow: 0 4px 16px rgba(0, 255, 106, 0.15);
-          }
-          left: 0;
-          top: 0;
-          z-index: 10;
-        }
-        .main {
-          flex: 1;
-          margin-left: 220px;
-          padding: 3rem;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          min-width: 0;
-          background: #fff;
-        }
-        .tab {
-          background: #00ff6a;
-          color: #111;
-          border: none;
-          border-radius: 8px;
-          padding: 0.8rem 1.5rem;
-          font-size: 1.1rem;
-          font-weight: 600;
-          cursor: pointer;
-          margin-bottom: 0.5rem;
-          box-shadow: 0 2px 8px rgba(0, 255, 106, 0.07);
-          transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-        }
-          .tab {
-            background: #00ff6a;
-            color: #111;
-            border: none;
-            border-radius: 8px;
-            padding: 0.8rem 1.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 0.8rem;
-            width: 160px;
-            box-shadow: 0 2px 8px rgba(0,255,106,0.07);
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-            text-align: center;
-          }
-        }
       }
+
+      /* Layout */
+      .layout {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: #111;
+        color: #fff;
+        width: 220px;
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 24px;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.12);
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+        color: #00ff6a;
+        margin-bottom: 12px;
+      }
+
       .tabs {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 12px;
         align-items: center;
+        width: 100%;
+        margin-top: 12px;
       }
+
       .tab {
-        background: #fff;
-        color: #00ff6a;
+        background: #00ff6a;
+        color: #000;
         border: none;
         border-radius: 8px;
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
-        font-weight: 600;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        font-weight: 700;
         cursor: pointer;
-        margin-bottom: 0.5rem;
-        box-shadow: 0 2px 8px rgba(0, 255, 106, 0.07);
-        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        margin: 0;
+        width: 160px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        text-align: center;
       }
-      .tab.active,
-      .tab:hover {
-        background: #00ff6a;
-        color: #111;
-        font-weight: bold;
-        box-shadow: 0 4px 16px rgba(0, 255, 106, 0.15);
+
+      .tab:hover,
+      .tab.active {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
       }
+
+      /* Main content */
       .main {
         flex: 1;
         margin-left: 220px;
-        padding: 3rem;
+        padding: 32px 48px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         min-width: 0;
-      }
-      .section {
-        display: none;
-        width: 100%;
-      }
-      .section.active {
-        display: block;
-        animation: fadeIn 0.5s;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      .resume-frame {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #fffbe6 0%, #f7e1ff 100%);
-        border: 8px solid #c49a6c;
-        border-radius: 24px;
-        box-shadow: 0 8px 24px rgba(80, 60, 20, 0.18),
-          0 2px 8px rgba(80, 80, 160, 0.07);
-        padding: 2rem;
-        margin: 2rem auto;
-        max-width: 600px;
-      }
-      .resume-embed {
-        width: 100%;
-        height: 500px;
-        border: none;
-        border-radius: 16px;
-        box-shadow: 0 2px 8px rgba(80, 80, 160, 0.07);
         background: #fff;
       }
+
+      /* Home section */
+      .section {
+        width: 100%;
+      }
+
+      .home-box {
+        background: #111;
+        color: #fff;
+        border-radius: 12px;
+        padding: 24px 28px;
+        max-width: 1100px;
+        width: 100%;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .home-box h1 {
+        margin-top: 0;
+      }
+
+      /* Projects list */
       .projects-list {
         list-style: none;
         padding: 0;
         margin: 0;
+        width: 100%;
+        max-width: 1100px;
       }
+
       .projects-list li {
-        margin-bottom: 1.2rem;
-        padding: 1.2rem;
+        margin-bottom: 1rem;
+        padding: 1rem 1.2rem;
         background: linear-gradient(90deg, #f7971e 0%, #ffd200 100%);
         border-radius: 12px;
         color: #222;
         box-shadow: 0 2px 8px rgba(80, 80, 160, 0.07);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         font-weight: 500;
-        display: flex;
-        flex-direction: column;
       }
+
       .projects-list a {
         color: #2575fc;
-        font-weight: bold;
+        font-weight: 700;
         text-decoration: none;
-        margin-top: 0.5rem;
       }
-      .projects-list a:hover {
-        text-decoration: underline;
-        color: #ee0979;
-      }
+
       @media (max-width: 900px) {
         .layout {
           flex-direction: column;
         }
         .sidebar {
+          position: relative;
           width: 100%;
-          flex-direction: row;
-          padding: 1rem 0;
+          height: auto;
           box-shadow: none;
+          padding: 12px 0;
+        }
+        .main {
+          margin-left: 0;
+          padding: 16px;
         }
         .tabs {
           flex-direction: row;
-          gap: 0.5rem;
-          margin: 0 0.5rem;
-        }
-        .main {
-          padding: 1rem;
         }
       }
     </style>
@@ -222,35 +171,38 @@
       </div>
       <div class="main">
         <div class="section active" id="home">
-          <h1>Hello, my name is Johnny.</h1>
-          <p>
-            I am a Master of Science student in Computer Science at Fairleigh
-            Dickinson University with a strong foundation in object-oriented
-            programming, web development, and AI-related data structures and
-            algorithms. Through my academic projects, I have applied OOP
-            principles to build functional applications, such as a food ordering
-            system with persistent data storage and unit-tested code, gaining
-            hands-on experience in designing practical software solutions under
-            tight deadlines.
-          </p>
-          <p>
-            In addition, I have developed responsive web applications using
-            JavaScript, TypeScript, HTML, and CSS, including collaborative
-            projects where user input is analyzed to create dynamic, intelligent
-            interactions. These experiences have strengthened my skills in
-            writing maintainable code, designing user interfaces, and
-            collaborating effectively with teammates to align functionality with
-            project goals.
-          </p>
-          <p>
-            I bring over a year of experience in programming with C++, C,
-            Python, and Java, as well as software version control using Git and
-            GitHub. I am proficient in designing and implementing unit tests,
-            building AI-related algorithms and data structures, and developing
-            web applications. I thrive in environments that challenge me to
-            apply my technical skills, solve problems creatively, and work
-            collaboratively on meaningful software projects.
-          </p>
+          <div class="home-box">
+            <h1>Hello, my name is Johnny.</h1>
+            <p>
+              I am a Master of Science student in Computer Science at Fairleigh
+              Dickinson University with a strong foundation in object-oriented
+              programming, web development, and AI-related data structures and
+              algorithms. Through my academic projects, I have applied OOP
+              principles to build functional applications, such as a food
+              ordering system with persistent data storage and unit-tested code,
+              gaining hands-on experience in designing practical software
+              solutions under tight deadlines.
+            </p>
+            <p>
+              In addition, I have developed responsive web applications using
+              JavaScript, TypeScript, HTML, and CSS, including collaborative
+              projects where user input is analyzed to create dynamic,
+              intelligent interactions. These experiences have strengthened my
+              skills in writing maintainable code, designing user interfaces,
+              and collaborating effectively with teammates to align
+              functionality with project goals.
+            </p>
+            <p>
+              I bring over a year of experience in programming with C++, C,
+              Python, and Java, as well as software version control using Git
+              and GitHub. I am proficient in designing and implementing unit
+              tests, building AI-related algorithms and data structures, and
+              developing web applications. I thrive in environments that
+              challenge me to apply my technical skills, solve problems
+              creatively, and work collaboratively on meaningful software
+              projects.
+            </p>
+          </div>
         </div>
         <div class="section" id="projects">
           <h1>My Projects</h1>
@@ -422,10 +374,11 @@
             }
           </script>
           <script>
-            document
-              .getElementById("resumeFrame")
-              .addEventListener("click", function () {
+            const resumeFrame = document.getElementById("resumeFrame");
+            if (resumeFrame) {
+              resumeFrame.addEventListener("click", function () {
                 const iframe = this.querySelector(".resume-embed");
+                if (!iframe) return;
                 if (iframe.requestFullscreen) {
                   iframe.requestFullscreen();
                 } else if (iframe.webkitRequestFullscreen) {
@@ -436,6 +389,7 @@
                   iframe.msRequestFullscreen();
                 }
               });
+            }
           </script>
         </div>
       </div>
