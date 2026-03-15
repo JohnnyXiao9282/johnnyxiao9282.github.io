@@ -11,7 +11,7 @@
     <style>
       body {
         font-family: "Roboto", sans-serif;
-        background: linear-gradient(135deg, #e3e9f7 0%, #f7e1ff 100%);
+        background: #fff;
         margin: 0;
         padding: 0;
       }
@@ -21,7 +21,7 @@
         align-items: stretch;
       }
       .sidebar {
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        background: #111;
         color: #fff;
         width: 220px;
         min-width: 220px;
@@ -29,7 +29,7 @@
         flex-direction: column;
         align-items: center;
         padding: 2rem 0 2rem 0;
-        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.07);
+        box-shadow: 2px 0 8px rgba(0, 255, 106, 0.12);
         height: 100vh;
         position: fixed;
         left: 0;
@@ -42,7 +42,7 @@
         text-align: center;
         margin-bottom: 2rem;
         letter-spacing: 2px;
-        color: #fff;
+        color: #00ff6a;
       }
       .tabs {
         display: flex;
@@ -52,7 +52,7 @@
       }
       .tab {
         background: #fff;
-        color: #2575fc;
+        color: #00ff6a;
         border: none;
         border-radius: 8px;
         padding: 0.8rem 1.5rem;
@@ -60,15 +60,15 @@
         font-weight: 600;
         cursor: pointer;
         margin-bottom: 0.5rem;
-        box-shadow: 0 2px 8px rgba(80, 80, 160, 0.07);
+        box-shadow: 0 2px 8px rgba(0, 255, 106, 0.07);
         transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       }
       .tab.active,
       .tab:hover {
-        background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-        color: #fff;
+        background: #00ff6a;
+        color: #111;
         font-weight: bold;
-        box-shadow: 0 4px 16px rgba(80, 80, 160, 0.15);
+        box-shadow: 0 4px 16px rgba(0, 255, 106, 0.15);
       }
       .main {
         flex: 1;
@@ -342,22 +342,39 @@
         </div>
         <div class="section" id="resume">
           <h1>My Resume</h1>
-       <div style="display: flex; flex-direction: column; align-items: center;">
-         <img id="resume-img" src="JohnnyXiaoResume.png" alt="Johnny Xiao Resume" style="max-width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0,0,0,0.15); border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onclick="openResumeFullscreen()">
-         <p style="margin-top: 12px; color: #888; font-size: 1rem;">Click the resume to view fullscreen</p>
-       </div>
-       <script>
-       function openResumeFullscreen() {
-         const img = document.getElementById('resume-img');
-         if (img.requestFullscreen) {
-           img.requestFullscreen();
-         } else if (img.webkitRequestFullscreen) {
-           img.webkitRequestFullscreen();
-         } else if (img.msRequestFullscreen) {
-           img.msRequestFullscreen();
-         }
-       }
-       </script>
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <img
+              id="resume-img"
+              src="JohnnyXiaoResume.png"
+              alt="Johnny Xiao Resume"
+              style="
+                max-width: 100%;
+                height: auto;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: box-shadow 0.3s;
+              "
+              onclick="openResumeFullscreen()"
+            />
+            <p style="margin-top: 12px; color: #888; font-size: 1rem">
+              Click the resume to view fullscreen
+            </p>
+          </div>
+          <script>
+            function openResumeFullscreen() {
+              const img = document.getElementById("resume-img");
+              if (img.requestFullscreen) {
+                img.requestFullscreen();
+              } else if (img.webkitRequestFullscreen) {
+                img.webkitRequestFullscreen();
+              } else if (img.msRequestFullscreen) {
+                img.msRequestFullscreen();
+              }
+            }
+          </script>
           <script>
             document
               .getElementById("resumeFrame")
