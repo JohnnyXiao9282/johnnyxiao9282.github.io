@@ -10,101 +10,100 @@
     />
     <style>
       body {
-        body {
-          font-family: "Segoe UI", Arial, sans-serif;
-          background: #fff;
-          margin: 0;
-          padding: 0;
-          min-height: 100vh;
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #e3e9f7 0%, #f7e1ff 100%);
+        margin: 0;
+        padding: 0;
+      }
+      .layout {
+        display: flex;
+        min-height: 100vh;
+        align-items: stretch;
+      }
+      .sidebar {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: #fff;
+        width: 220px;
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0 2rem 0;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.07);
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10;
+      }
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+        letter-spacing: 2px;
+        color: #fff;
+      }
+      .tabs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+      .tab {
+        background: #fff;
+        color: #2575fc;
+        border: none;
+        border-radius: 8px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 2px 8px rgba(80, 80, 160, 0.07);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      }
+      .tab.active,
+      .tab:hover {
+        background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0 4px 16px rgba(80, 80, 160, 0.15);
+      }
+      .main {
+        flex: 1;
+        margin-left: 220px;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 0;
+      }
+      .section {
+        display: none;
+        width: 100%;
+      }
+      .section.active {
+        display: block;
+        animation: fadeIn 0.5s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
-        .sidebar {
-          background: #111;
-          color: #fff;
-          width: 220px;
-          min-height: 100vh;
-          padding: 32px 0 0 0;
-          position: fixed;
-          left: 0;
-          top: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          box-shadow: 2px 0 16px rgba(0, 0, 0, 0.16);
+        to {
+          opacity: 1;
         }
-        .sidebar h2 {
-          margin-bottom: 40px;
-          font-size: 2rem;
-          font-weight: bold;
-          letter-spacing: 1px;
-          color: #00ff6a;
-        }
-        .nav-btn {
-          width: 160px;
-          padding: 14px 0;
-          margin-bottom: 18px;
-          border: none;
-          border-radius: 8px;
-          font-size: 1.1rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-        }
-        .nav-btn.home {
-          background: #fff;
-          color: #00ff6a;
-        }
-        .nav-btn.projects {
-          background: #fff;
-          color: #00ff6a;
-        }
-        .nav-btn.resume {
-          background: #00ff6a;
-          color: #111;
-        }
-        .nav-btn.active {
-          box-shadow: 0 4px 16px rgba(0, 255, 106, 0.18);
-          border: 2px solid #00ff6a;
-        }
-        .main-content {
-          margin-left: 220px;
-          padding: 48px 48px 48px 48px;
-          min-height: 100vh;
-          background: #fff;
-        }
-        .section {
-          background: none;
-          padding: 0;
-          border-radius: 0;
-          box-shadow: none;
-        }
-        .project-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        .project-card {
-          background: linear-gradient(90deg, #00ff6a 0%, #009e3c 100%);
-          color: #fff;
-          margin-bottom: 18px;
-          padding: 24px 32px;
-          border-radius: 16px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-          font-size: 1.1rem;
-          transition: box-shadow 0.2s, transform 0.2s;
-          display: flex;
-          flex-direction: column;
-        }
-        .project-card a {
-          color: #fff;
-          font-weight: bold;
-          text-decoration: underline;
-          margin-top: 8px;
-          transition: color 0.2s;
-        }
-        .project-card a:hover {
-          color: #00ff6a;
-        }
+      }
+      .resume-frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #fffbe6 0%, #f7e1ff 100%);
+        border: 8px solid #c49a6c;
+        border-radius: 24px;
+        box-shadow: 0 8px 24px rgba(80, 60, 20, 0.18),
+          0 2px 8px rgba(80, 80, 160, 0.07);
         padding: 2rem;
         margin: 2rem auto;
         max-width: 600px;
@@ -343,39 +342,22 @@
         </div>
         <div class="section" id="resume">
           <h1>My Resume</h1>
-          <div
-            style="display: flex; flex-direction: column; align-items: center"
-          >
-            <img
-              id="resume-img"
-              src="JohnnyXiaoResume.png"
-              alt="Johnny Xiao Resume"
-              style="
-                max-width: 100%;
-                height: auto;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-                border-radius: 8px;
-                cursor: pointer;
-                transition: box-shadow 0.3s;
-              "
-              onclick="openResumeFullscreen()"
-            />
-            <p style="margin-top: 12px; color: #888; font-size: 1rem">
-              Click the resume to view fullscreen
-            </p>
-          </div>
-          <script>
-            function openResumeFullscreen() {
-              const img = document.getElementById("resume-img");
-              if (img.requestFullscreen) {
-                img.requestFullscreen();
-              } else if (img.webkitRequestFullscreen) {
-                img.webkitRequestFullscreen();
-              } else if (img.msRequestFullscreen) {
-                img.msRequestFullscreen();
-              }
-            }
-          </script>
+       <div style="display: flex; flex-direction: column; align-items: center;">
+         <img id="resume-img" src="JohnnyXiaoResume.png" alt="Johnny Xiao Resume" style="max-width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0,0,0,0.15); border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onclick="openResumeFullscreen()">
+         <p style="margin-top: 12px; color: #888; font-size: 1rem;">Click the resume to view fullscreen</p>
+       </div>
+       <script>
+       function openResumeFullscreen() {
+         const img = document.getElementById('resume-img');
+         if (img.requestFullscreen) {
+           img.requestFullscreen();
+         } else if (img.webkitRequestFullscreen) {
+           img.webkitRequestFullscreen();
+         } else if (img.msRequestFullscreen) {
+           img.msRequestFullscreen();
+         }
+       }
+       </script>
           <script>
             document
               .getElementById("resumeFrame")
