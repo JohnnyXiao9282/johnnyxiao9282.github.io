@@ -1,0 +1,8 @@
+# Ignore resume files
+JohnnyXiaoResume.pdf
+JohnnyXiaoResume.png
+
+# Other common ignores
+.DS_Store
+node_modules/
+*.log

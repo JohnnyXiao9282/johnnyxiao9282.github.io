@@ -342,23 +342,38 @@
         </div>
         <div class="section" id="resume">
           <h1>My Resume</h1>
-           <div class="resume-frame" id="resumeFrame" style="cursor:pointer;">
-             <iframe class="resume-embed" src="JohnnyXiaoResumeSDE2026General.pdf#view=FitH" frameborder="0"></iframe>
-           </div>
-           <script>
-             document.getElementById('resumeFrame').addEventListener('click', function() {
-               const iframe = this.querySelector('.resume-embed');
-               if (iframe.requestFullscreen) {
-                 iframe.requestFullscreen();
-               } else if (iframe.webkitRequestFullscreen) {
-                 iframe.webkitRequestFullscreen();
-               } else if (iframe.mozRequestFullScreen) {
-                 iframe.mozRequestFullScreen();
-               } else if (iframe.msRequestFullscreen) {
-                 iframe.msRequestFullscreen();
-               }
-             });
-           </script>
+       <div style="display: flex; flex-direction: column; align-items: center;">
+         <img id="resume-img" src="JohnnyXiaoResume.png" alt="Johnny Xiao Resume" style="max-width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0,0,0,0.15); border-radius: 8px; cursor: pointer; transition: box-shadow 0.3s;" onclick="openResumeFullscreen()">
+         <p style="margin-top: 12px; color: #888; font-size: 1rem;">Click the resume to view fullscreen</p>
+       </div>
+       <script>
+       function openResumeFullscreen() {
+         const img = document.getElementById('resume-img');
+         if (img.requestFullscreen) {
+           img.requestFullscreen();
+         } else if (img.webkitRequestFullscreen) {
+           img.webkitRequestFullscreen();
+         } else if (img.msRequestFullscreen) {
+           img.msRequestFullscreen();
+         }
+       }
+       </script>
+          <script>
+            document
+              .getElementById("resumeFrame")
+              .addEventListener("click", function () {
+                const iframe = this.querySelector(".resume-embed");
+                if (iframe.requestFullscreen) {
+                  iframe.requestFullscreen();
+                } else if (iframe.webkitRequestFullscreen) {
+                  iframe.webkitRequestFullscreen();
+                } else if (iframe.mozRequestFullScreen) {
+                  iframe.mozRequestFullScreen();
+                } else if (iframe.msRequestFullscreen) {
+                  iframe.msRequestFullscreen();
+                }
+              });
+          </script>
         </div>
       </div>
     </div>
