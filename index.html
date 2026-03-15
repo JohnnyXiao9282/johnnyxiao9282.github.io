@@ -28,9 +28,54 @@
           transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         }
         .tab.active,
+        .layout {
+          display: flex;
+          min-height: 100vh;
+          align-items: stretch;
+        }
+        .sidebar {
+          background: #111;
+          color: #fff;
+          width: 220px;
+          min-width: 220px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 0 2rem 0;
+          box-shadow: 2px 0 8px rgba(0, 255, 106, 0.12);
+          height: 100vh;
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 10;
+        }
+        .main {
+          flex: 1;
+          margin-left: 220px;
+          padding: 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          min-width: 0;
+          background: #fff;
+        }
+        .tab {
+          background: #00ff6a;
+          color: #111;
+          border: none;
+          border-radius: 8px;
+          padding: 0.8rem 1.5rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          cursor: pointer;
+          margin-bottom: 0.5rem;
+          box-shadow: 0 2px 8px rgba(0, 255, 106, 0.07);
+          transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .tab.active,
         .tab:hover {
-          background: #00ff6a !important;
-          color: #111 !important;
+          background: #00ff6a;
+          color: #111;
           font-weight: bold;
           box-shadow: 0 4px 16px rgba(0, 255, 106, 0.15);
         }
@@ -39,16 +84,8 @@
           color: #fff;
           border-radius: 16px;
           padding: 2rem;
+          margin: 2rem 0;
         }
-        z-index: 10;
-      }
-      .logo {
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 2rem;
-        letter-spacing: 2px;
-        color: #00ff6a;
       }
       .tabs {
         display: flex;
