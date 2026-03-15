@@ -4,7 +4,7 @@ Welcome to my personal website!
 
 ## Live Site
 
-[View the website here](https://JohnnyXiao9282.github.io/)
+[View the website here](https://johnnyxiao9282.github.io/)
 
 ## Features
 - Sidebar navigation with Home, MyProjects, and MyResume tabs
