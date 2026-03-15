@@ -308,14 +308,20 @@
         <div class="section" id="resume">
           <h1>My Resume</h1>
           <div style="margin: 2rem auto 0 auto; text-align: center">
-            <a
-              href="JohnnyXiaoResumeSDE2026General.pdf"
-              target="_blank"
-              style="font-size: 1.2rem; font-weight: bold; color: #ee0979"
-            >
-              Click here to view my resume (PDF)
-            </a>
+            <iframe id="resumeFrame" src="JohnnyXiaoResumeSDE2026General.pdf" width="80%" height="600px" style="border-radius: 12px; border: 2px solid #ee0979; box-shadow: 0 4px 16px rgba(80,80,160,0.15); cursor:pointer;" title="Resume PDF"></iframe>
           </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var frame = document.getElementById("resumeFrame");
+              frame.addEventListener("click", function() {
+                if (document.fullscreenElement) {
+                  document.exitFullscreen();
+                } else {
+                  frame.requestFullscreen();
+                }
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
